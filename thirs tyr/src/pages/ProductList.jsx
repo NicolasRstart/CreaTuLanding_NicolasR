@@ -1,6 +1,5 @@
 import { Link, useParams } from "react-router-dom";
 
-// Datos simulados (en un futuro se reemplaza con fetch a API)
 const PRODUCTS = [
   { id: 1, name: "Laptop", category: "electronica" },
   { id: 2, name: "Auriculares", category: "electronica" },

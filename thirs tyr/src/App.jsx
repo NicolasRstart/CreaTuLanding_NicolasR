@@ -1,4 +1,7 @@
-import Navbar from "./assets/baradenavegacion";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import ItemListContainer from "./pages/ProductList";
+import productdetaill from ".pages/productdetail"
 
 export default function App() {
   return (
