@@ -25,9 +25,7 @@ export default function Cart() {
               <div className="text-sm">Cantidad: {i.qty}</div>
               <div className="text-sm">Subtotal: ${i.subtotal}</div>
             </div>
-            <div className="flex gap-2">
-              <button onClick={() => removeFromCart(i.id, 1)} className="px-3 py-1 border rounded">-1</button>
-            </div>
+            <button onClick={() => removeFromCart(i.id, 1)} className="px-3 py-1 border rounded">-1</button>
           </li>
         ))}
       </ul>

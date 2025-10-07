@@ -1,9 +1,14 @@
 import { useParams, Link } from "react-router-dom";
 import { PRODUCTS } from "../data/products";
+import ItemDetail from "../components/ItemDetail";
+import { useState } from "react";
+import { useCart } from "../assets/CartContext";
 
 export default function ItemDetailContainer() {
   const { id } = useParams();
   const product = PRODUCTS.find((p) => p.id === Number(id));
+  const [added, setAdded] = useState(false);
+  const { addToCart } = useCart();
 
   if (!product) {
     return (
@@ -14,14 +19,17 @@ export default function ItemDetailContainer() {
     );
   }
 
+  function handleAdd(qty) {
+    addToCart(product, qty);
+    setAdded(true);
+  }
+
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold mb-2">{product.name}</h1>
-      <p className="text-gray-600 mb-4">Categoría: {product.category}</p>
-      <p className="mb-4">{product.description}</p>
-      <Link to="/" className="text-blue-600 hover:underline">
-        Volver al catálogo
-      </Link>
+      <ItemDetail product={product} onAdd={handleAdd} added={added} />
+      <div className="mt-4">
+        <Link to="/" className="text-blue-600 hover:underline">Volver al catálogo</Link>
+      </div>
     </div>
   );
 }
