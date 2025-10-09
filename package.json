@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "firebase": "^12.4.0",
     "lucide-react": "^0.541.0",
     "react-router-dom": "^7.9.3"
   },
