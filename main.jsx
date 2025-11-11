@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./thirs tyr/src/App.jsx";
+import App from "./thirstyr/src/App.js";
 import "./index.css";
 import { CartProvider } from "./assets/CartContext";
 
